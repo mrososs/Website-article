@@ -1,0 +1,27 @@
+span{
+    font-weight: bold;
+    font-size: 30px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.z{
+    background-color: #DCA728;
+    color: white;
+}
+.za{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    border: none; 
+}
+.zi{
+    border-radius: 0;
+}
+marquee{
+    color:#DCA728;
+    font-weight: bold;
+}
+.zb{
+    background-color: #DCA728;
+    color: white;
+}

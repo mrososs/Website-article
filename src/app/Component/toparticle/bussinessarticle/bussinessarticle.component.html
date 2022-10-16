@@ -1,0 +1,51 @@
+<div class="container">
+  
+    <div class="row">
+        <div class="col-lg-4 mt-5">
+          <div class="input-group rounded" style="width: 18rem;">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" 
+            />
+           
+          </div>
+          <div class="card mt-5" style="width: 18rem;">
+            <div class="card-header">
+              <span>Categories</span>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              
+                <a class="list-group-item" routerLink="/bussinessarticle"> bussines</a>
+                <a class="list-group-item" routerLink="/entarticle"> entertainment</a>
+                <a class="list-group-item" routerLink="/genralarticle"> general</a>
+                <a class="list-group-item" routerLink="/healtharticle"> health</a>
+                <a class="list-group-item" routerLink="/sciencearticle"> science</a>
+                <a class="list-group-item" routerLink="/sportsarticle"> sports</a>
+                <a class="list-group-item" routerLink="/technologyarticle"> technology</a>
+            </ul>
+          </div>
+        </div>
+        <div  class="col mt-5">
+          <div *ngFor="let article of bussinessarticle  | paginate:{itemsPerPage: 10 , currentPage: page}"    class="card mb-3 za" style="max-width: 700px;">
+           
+              
+          
+
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{article.urlToImage}}" class="card-img zi" alt="..." style="height: 100%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body ">
+                  <h5 class="card-title">{{article.title}}</h5>
+                  <p class="card-text">{{article.description}}</p>
+                  <a href="{{article.url}}" target="_blank" class="btn z">Read More</a>
+                  <p class="card-text"><small class="text-muted">{{article.publishedAt | date:'fullDate'}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+         
+        </div>
+    </div>
+</div>
